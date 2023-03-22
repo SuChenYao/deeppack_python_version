@@ -80,7 +80,7 @@ epsilon = 1
 losses = []
 rewards = []
 mem_size = 2000
-batch_size = 32
+batch_size = 16
 replay = deque(maxlen=mem_size)
 sync_freq = 500  #每500次將eval model 複製到target model
 
