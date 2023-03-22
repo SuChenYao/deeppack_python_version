@@ -17,7 +17,7 @@ print(torch.cuda.get_device_name())
 bin_w = 23
 bin_h = 37
 input_per_bin = 12
-epochs = 100
+epochs = 3000
 
 print(f"now size: {bin_w} {bin_h}")
 
@@ -79,7 +79,7 @@ epsilon = 1
 
 losses = []
 rewards = []
-mem_size = 20000
+mem_size = 2000
 batch_size = 32
 replay = deque(maxlen=mem_size)
 sync_freq = 500  #每500次將eval model 複製到target model
@@ -99,7 +99,6 @@ import sys
 
 #delete output file last time
 try:
-    os.remove("time.txt")
     os.remove("train_state_action.txt")
     os.remove("action_reward_T.txt")    
     os.remove("reward_result_T.txt")
