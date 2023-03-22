@@ -161,7 +161,7 @@ for i in range(epochs):
       #new_slice = slices[(i%800)*12 + input_count].split()
       time1 = time.time() 
       
-      new_slice = slices[input_per_bin*i+input_per_bin*i+input_count].split() # get "width height" information, split by " " into ["width","height"] 
+      new_slice = slices[input_per_bin*i+input_count].split() # get "width height" information, split by " " into ["width","height"] 
       width = new_slice[0]
       height = new_slice[1]
       width_ = float(width) / 100
@@ -328,7 +328,7 @@ for i in range(epochs):
           reward = len(cluster_Q)*compactness
           del cluster_Q
         else:
-          reward = -100
+          reward = -80
       else: #action is 25 no action, calculate special reward, now use -50
         reward = -50
         """
