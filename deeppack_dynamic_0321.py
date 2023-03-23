@@ -160,7 +160,7 @@ for i in range(epochs):
       #new_slice = slices[(i%800)*12 + input_count].split()
       time1 = time.time() 
       
-      new_slice = slices[input_per_bin*i+input_count].split() # get "width height" information, split by " " into ["width","height"] 
+      new_slice = slices[input_count].split() # get "width height" information, split by " " into ["width","height"] 
       width = new_slice[0]
       height = new_slice[1]
       width_ = float(width) / 100
@@ -509,7 +509,7 @@ print("finish in",time_finish - time0)
 # In[ ]:
 
 
-torch.save(model.state_dict(), "deeppack_dynamic_model_23_37_0309.pt")
+torch.save(model.state_dict(), "deeppack_dynamic_model_23_37_0323.pt")
 
 
 # In[ ]:
@@ -520,14 +520,14 @@ plt.plot(losses)
 plt.title("23*37 training loss")
 plt.xlabel("Episodes",fontsize=22)
 plt.ylabel("Loss",fontsize=22)
-plt.savefig("0309_23x37_train_loss.png")
+plt.savefig("0323_23x37_train_loss.png")
 
 plt.figure(figsize=(10,7))
 plt.plot(rewards)
 plt.title("23*37 training reward")
 plt.xlabel("Episodes",fontsize=22)
 plt.ylabel("Reward",fontsize=22)
-plt.savefig("0309_23x37_train_reward.png")
+plt.savefig("0323_23x37_train_reward.png")
 
 plt.figure(figsize=(10,7))
 plt.ylim(0,1)
@@ -535,7 +535,7 @@ plt.plot(accept_prob_per_board)
 plt.title("23*37 training accept rate")
 plt.xlabel("boards",fontsize=22)
 plt.ylabel("accept_prob",fontsize=22)
-plt.savefig("0309_23x37_train_accept_prob_per_board.png")
+plt.savefig("0323_23x37_train_accept_prob_per_board.png")
 
 plt.figure(figsize=(10,7))
 plt.ylim(0,1)
@@ -543,7 +543,7 @@ plt.plot(PE_per_baord)
 plt.title("23*37 training PE")
 plt.xlabel("episodes",fontsize=22)
 plt.ylabel("PE",fontsize=22)
-plt.savefig("0309_23x37_train_PE_per_baord.png")
+plt.savefig("0323_23x37_train_PE_per_baord.png")
 
 print("total accept rate: ",total_accept/(epochs*input_per_bin))
 
